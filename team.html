@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team &amp; Speakers · AI for Weather Forecasting Training Program</title>
+<meta name="description" content="The people behind the program — leadership from MBZUAI and the University of Chicago, program coordination, the technical team, and partner collaborators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.grp{margin-top:56px}
+.grp:first-of-type{margin-top:0}
+.grp .gh{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+.grp .gh h2{font-size:clamp(1.5rem,3vw,2.1rem)}
+.grp .gh .gc{color:var(--muted);font-size:.92rem}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pgrid.wide{grid-template-columns:repeat(3,1fr)}
+.person .pn a{color:inherit}.person .pn a:hover{color:var(--teal)}
+.person details{padding:0 20px 18px}
+.person summary{cursor:pointer;font-size:.82rem;font-weight:600;color:var(--teal);list-style:none}
+.person summary::-webkit-details-marker{display:none}
+.person summary::before{content:"Read bio +";}
+.person details[open] summary::before{content:"Hide bio –";}
+.person .bio{font-size:.88rem;color:var(--muted);margin-top:10px;line-height:1.55}
+.contact{background:linear-gradient(120deg,var(--teal),var(--teal-d));color:#fff;border-radius:20px;padding:44px}
+.contact h2{color:#fff;font-size:1.7rem}
+.contact p{color:rgba(255,255,255,.85);margin:12px 0 4px;max-width:60ch}
+.contact a{color:#fff;font-weight:600;border-bottom:1px solid rgba(255,255,255,.5)}
+@media(max-width:900px){.pgrid,.pgrid.wide{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pgrid,.pgrid.wide{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><span class="mark"></span>AI for Weather Forecasting<br>Training Program</a>
+    <div class="links">
+      <a href="index.html#about">About</a><a href="research.html">Research</a><a href="agenda.html">Agenda</a><a href="team.html" class="active">Team</a>
+      <a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a><a href="2025.html">2025</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="sheet" id="sheet">
+  <div class="top"><span class="brand"><span class="mark"></span>AI for Weather Forecasting</span><button class="x" id="closeSheet">&times;</button></div>
+  <a href="index.html#about">About</a><a href="research.html">Research</a><a href="agenda.html">Agenda</a><a href="team.html">Team</a>
+  <a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a><a href="2025.html">2025</a>
+</div>
+
+<header class="pagehero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--amber)">The people behind the program</span>
+    <h1>Researchers, practitioners &amp; weather service professionals.</h1>
+    <p class="lead">The program is led by MBZUAI in collaboration with the University of Chicago's AI for Climate initiative, the UAE National Center of Meteorology, and a network of research, government, and industry partners.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap" id="teamRoot"></div>
+</section>
+
+<section class="band">
+  <div class="wrap reveal">
+    <div class="contact">
+      <span class="eyebrow" style="color:rgba(255,255,255,.8)">Get in touch</span>
+      <h2>Questions about the program?</h2>
+      <p>For any inquiries regarding the training program or coordination, please contact <a href="mailto:Souhaib.BenTaieb@mbzuai.ac.ae">Dr. Souhaib Ben Taieb</a> (Project Lead, MBZUAI) and <a href="mailto:Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae">Akbobek Abilkaiyrkyzy</a> (Project Coordinator, MBZUAI).</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><span class="brand"><span class="mark"></span>AI for Weather Forecasting</span><p class="foot-note">A capacity-building program under the AIM for Scale Weather Innovation Package — led by MBZUAI with the University of Chicago AI for Climate initiative and partners.</p></div>
+      <div><h4>Program</h4><a href="index.html#about">About</a><a href="research.html">Research</a><a href="agenda.html">Agenda</a><a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a></div>
+      <div><h4>People</h4><a href="team.html">Team &amp; Speakers</a><a href="participants.html">Participants</a></div>
+      <div><h4>Contact</h4><a href="mailto:Souhaib.BenTaieb@mbzuai.ac.ae">Dr. Souhaib Ben Taieb</a><a href="mailto:Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae">Akbobek Abilkaiyrkyzy</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 · Led by MBZUAI with University of Chicago AI for Climate</span><span>Supported by AIM for Scale · Funded through the International Affairs Office, UAE Presidential Court</span></div>
+  </div>
+</footer>
+
+<script>
+const PH="https://ai4farmcast.ai/assets/people/";
+const GROUPS=[
+ {h:"Leadership & Organizers",c:"Program direction and curriculum",wide:true,people:[
+   {n:"Dr. Souhaib Ben Taieb",r:"Project Lead",o:"MBZUAI",img:"souhaib.jpg",url:"https://souhaib-bentaieb.com/",bio:"Associate Professor at MBZUAI. His research spans probabilistic machine learning, generative modelling, time series analysis, and forecast verification. Associate Editor for the International Journal of Forecasting."},
+   {n:"Dr. Pedram Hassanzadeh",r:"Co-Lead",o:"University of Chicago",img:"pedram.jpeg",url:"https://geosci.uchicago.edu/people/pedram-hassanzadeh/",bio:"Associate Professor at UChicago and lead of the AI for Climate (AICE) Initiative. Co-directs the Human-Centered Weather Forecasts Initiative, using AI to innovate, benchmark, and democratize forecasts."},
+   {n:"Dr. Amir Jina",r:"Co-Lead",o:"University of Chicago",img:"amirjina.png",url:"https://harris.uchicago.edu/directory/amir-jina",bio:"Assistant Professor at Harris Public Policy and founding member of the Climate Impact Lab. Works in environmental and development economics, combining economics with climate science and remote sensing."},
+   {n:"Dr. Katie Kowal",r:"Weather Forecast Lead",o:"University of Chicago",img:"Katie.jpg",url:"https://datascience.uchicago.edu/people/katie-kowal/",bio:"Weather Forecast Lead for the Human-Centered Forecasts Indian Monsoon Onset project and curriculum lead for the training program. Former NOAA Climate Prediction Center scientist; DPhil in Hydrology, Oxford (Rhodes Scholar)."},
+   {n:"Imara Salas",r:"Director, AIM for Scale Secretariat",o:"AIM for Scale",img:"imara.jpeg",url:"https://keough.nd.edu/about/faculty-staff-directory/imara-salas-court/",bio:"Manages the Secretariat of AIM for Scale, a global initiative to scale evidence-based agricultural innovations. Her partnerships have mobilized over $1 billion for agriculture, climate resilience, and digital transformation."}
+ ]},
+ {h:"Program Coordination",c:"Day-to-day organization",wide:false,people:[
+   {n:"Akbobek Abilkaiyrkyzy",r:"Project Coordinator",o:"MBZUAI",img:"akbobek.jpeg",url:"mailto:Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae"},
+   {n:"Emma Hokoda",r:"Program Coordination",o:"University of Chicago",img:"",url:""},
+   {n:"Mauricio Ortiz-Riomalo",r:"Coordination",o:"University of Chicago",img:"mauricio.jpeg",url:""}
+ ]},
+ {h:"Research & Technical Team",c:"Hands-on labs and model development",wide:false,people:[
+   {n:"Adam Marchakitus",r:"Researcher",o:"University of Chicago",img:"adam.jpeg",url:"https://humancenteredforecasts.climate.uchicago.edu/people/adam-marchakitus/",bio:"Researcher in the Climate Extremes Theory and Data group, focused on interpretability of AI weather and climate models. Led the operational pipeline for the 2025 Indian Monsoon forecast dissemination."},
+   {n:"Aya Laajil",r:"Researcher",o:"MBZUAI",img:"",url:""},
+   {n:"Narayana Reddy Karrevula",r:"Researcher",o:"MBZUAI",img:"",url:""}
+ ]},
+ {h:"Speakers",c:"Full 2026 lineup to be confirmed",wide:false,people:[
+   {n:"Dr. Tufa Dinku",r:"Climate Services",o:"Columbia University (IRI)",img:"tufa_profile.jpg",url:"https://globalcenters.columbia.edu/content/tufa-dinku",bio:"Senior Research Scientist at the IRI with three decades in climate science. Developed the ENACTS approach, now implemented in over 20 countries to integrate climate knowledge into national decision-making."},
+   {n:"To be announced",r:"2026 speaker lineup",o:"Confirmed soon",img:"",url:""}
+ ]}
+];
+
+function initials(n){return n.replace(/^(Dr\.|Prof\.)\s+/,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();}
+function card(p){
+  const photo=p.img?'<img src="'+PH+encodeURIComponent(p.img)+'" alt="'+p.n+'" loading="lazy" onerror="this.style.display=\'none\'">':'';
+  const name=p.url?'<a href="'+p.url+'" target="_blank" rel="noopener">'+p.n+'</a>':p.n;
+  const bio=p.bio?'<details><summary></summary><p class="bio">'+p.bio+'</p></details>':'';
+  return '<article class="person"><div class="ph"><span class="initials">'+initials(p.n)+'</span>'+photo+'</div>'+
+    '<div class="pb"><div class="pn">'+name+'</div><div class="pr">'+p.r+'</div><div class="po">'+p.o+'</div></div>'+bio+'</article>';
+}
+document.getElementById('teamRoot').innerHTML=GROUPS.map(g=>
+  '<div class="grp reveal"><div class="gh"><h2>'+g.h+'</h2><span class="gc">'+g.c+'</span></div>'+
+  '<div class="pgrid'+(g.wide?' wide':'')+'">'+g.people.map(card).join('')+'</div></div>'
+).join('');
+
+const sheet=document.getElementById('sheet');
+document.getElementById('burger').onclick=()=>sheet.classList.add('open');
+document.getElementById('closeSheet').onclick=()=>sheet.classList.remove('open');
+sheet.querySelectorAll('a').forEach(a=>a.onclick=()=>sheet.classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
