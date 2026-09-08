@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The 2025 Program · AI for Weather Forecasting Training Program</title>
+<title>The 2025 Program · AI4AG Weather Forecasting Program</title>
 <meta name="description" content="A look back at the 2025 program — the first cohort of meteorologists and agricultural specialists from six countries, trained at MBZUAI in Abu Dhabi, September 2025.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
 .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:4;cursor:pointer;background:linear-gradient(160deg,rgba(12,42,43,.35),rgba(29,38,48,.55))}
 .play .btncircle{width:80px;height:80px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.2s}
@@ -35,25 +36,38 @@
 .gal .cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .gal .cell:hover img{transform:scale(1.05)}
 .vcap{color:var(--muted);font-size:.9rem;margin-top:12px}
-@media(max-width:900px){.stat-row{grid-template-columns:1fr 1fr}.quotes{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.stat-row,.gal{grid-template-columns:1fr}}
+.grp{margin-top:48px}.grp:first-child{margin-top:0}
+.grp .gh{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.grp .gh h3{font-size:1.3rem}.grp .gh .gc{color:var(--muted);font-size:.9rem}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.pcard .pn{font-family:var(--serif);font-weight:600;font-size:1rem;line-height:1.2}
+.pcard .pr{color:var(--teal);font-size:.8rem;font-weight:600;margin-top:4px}
+.pcard .po{color:var(--muted);font-size:.82rem;margin-top:2px}
+.ctry{display:flex;align-items:center;gap:10px;margin:30px 0 14px;font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.presslink{display:flex;flex-direction:column;gap:10px}
+.presslink .src{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.presslink h3{font-size:1.1rem;line-height:1.32;margin:0}
+.presslink .rd{color:var(--teal);font-weight:700;font-size:.9rem;margin-top:auto;padding-top:8px}
+@media(max-width:900px){.stat-row{grid-template-columns:1fr 1fr}.quotes{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.stat-row,.gal,.pgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><span class="mark"></span>AI for Weather Forecasting<br>Training Program</a>
+    <a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="AI4AG Weather Forecasting Program"></a>
     <div class="links">
-      <a href="index.html#about">About</a><a href="research.html">Research</a><a href="agenda.html">Agenda</a><a href="team.html">Team</a>
+      <a href="index.html#about">About</a><a href="agenda.html">Agenda</a><a href="team.html">Team</a>
       <a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a><a href="2025.html" class="active">2025</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="sheet" id="sheet">
-  <div class="top"><span class="brand"><span class="mark"></span>AI for Weather Forecasting</span><button class="x" id="closeSheet">&times;</button></div>
-  <a href="index.html#about">About</a><a href="research.html">Research</a><a href="agenda.html">Agenda</a><a href="team.html">Team</a>
+  <div class="top"><span class="brand"><img class="logo" src="assets/logo.png" alt="AI4AG Weather Forecasting Program"></span><button class="x" id="closeSheet">&times;</button></div>
+  <a href="index.html#about">About</a><a href="agenda.html">Agenda</a><a href="team.html">Team</a>
   <a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a><a href="2025.html">2025</a>
 </div>
 
@@ -95,17 +109,31 @@
       <span class="flagchip">🇨🇱 Chile</span><span class="flagchip">🇳🇬 Nigeria</span><span class="flagchip">🇰🇪 Kenya</span>
       <span class="flagchip">🇪🇹 Ethiopia</span><span class="flagchip">🇧🇩 Bangladesh</span><span class="flagchip">🇦🇪 UAE</span>
     </div>
-    <div class="quotes">
-      <div class="quote">
-        <div class="qm">&ldquo;</div>
-        <p>Running AI models against our own national data — and seeing where they help — changed how we think about what our forecast office can do.<span class="tag-ph">PLACEHOLDER QUOTE</span></p>
-        <div class="who"><span class="av"></span><span><span class="nm">2025 cohort participant</span><br><span class="rl">National Meteorological Service</span></span></div>
-      </div>
-      <div class="quote">
-        <div class="qm">&ldquo;</div>
-        <p>I left with a concrete way to turn a forecast into advice a farmer can act on the same morning.<span class="tag-ph">PLACEHOLDER QUOTE</span></p>
-        <div class="who"><span class="av"></span><span><span class="nm">2025 cohort participant</span><br><span class="rl">Ministry of Agriculture</span></span></div>
-      </div>
+  </div>
+</section>
+
+<!-- IN THE NEWS -->
+<section class="band">
+  <div class="wrap reveal">
+    <div class="sec-head" style="margin-bottom:30px"><span class="eyebrow">In the news</span><h2>Featured in the press.</h2>
+      <p class="lead">Coverage of the 2025 program from the partner institutions.</p>
+    </div>
+    <div class="grid-3">
+      <a class="card presslink" href="https://mbzuai.ac.ae/news/weather-forecasting-training-program-brings-power-of-ai-to-low-and-middle-income-countries/" target="_blank" rel="noopener">
+        <div class="src">MBZUAI</div>
+        <h3>Weather forecasting training program brings the power of AI to low- and middle-income countries</h3>
+        <div class="rd">Read the article →</div>
+      </a>
+      <a class="card presslink" href="https://climate.uchicago.edu/news/weather-forecasting-training-program-brings-the-power-of-ai-to-low-and-middle-income-countries/" target="_blank" rel="noopener">
+        <div class="src">University of Chicago</div>
+        <h3>Weather forecasting training program brings the power of AI to low- and middle-income countries</h3>
+        <div class="rd">Read the article →</div>
+      </a>
+      <a class="card presslink" href="https://aimforscale.org/news/ai-weather-training-supporting-low-and-middle-income-country-governments-to-better-serve-farmers/" target="_blank" rel="noopener">
+        <div class="src">AIM for Scale</div>
+        <h3>AI weather training: supporting low- and middle-income country governments to better serve farmers</h3>
+        <div class="rd">Read the article →</div>
+      </a>
     </div>
   </div>
 </section>
@@ -123,15 +151,46 @@
       <div class="cell"><img src="assets/2025-05.jpg" alt="Session at the UAE Presidential Court" loading="lazy"></div>
       <div class="cell"><img src="assets/2025-07.jpg" alt="Collaboration during the labs" loading="lazy"></div>
     </div>
-    <div style="margin-top:34px"><a class="btn btn-accent" href="participants.html">Meet the 2025 cohort</a></div>
+    <div style="margin-top:34px"><a class="btn btn-accent" href="#cohort2025">Meet the 2025 cohort ↓</a></div>
+  </div>
+</section>
+
+<!-- 2025 TEAM -->
+<section class="band">
+  <div class="wrap reveal">
+    <div class="sec-head" style="margin-bottom:16px"><span class="eyebrow">The 2025 team</span><h2>Who led the program.</h2></div>
+    <div id="team2025"></div>
+  </div>
+</section>
+
+<!-- 2025 WELCOMING REMARKS + SPEAKERS -->
+<section>
+  <div class="wrap reveal">
+    <div class="sec-head" style="margin-bottom:20px"><span class="eyebrow">Welcoming remarks</span><h2>Opening the program.</h2></div>
+    <div class="pgrid" id="welcome2025" style="margin-bottom:48px"></div>
+    <div class="sec-head" style="margin-bottom:26px"><span class="eyebrow">Invited speakers &amp; facilitators</span><h2>Guest experts from partner institutions.</h2>
+      <p class="lead">Specialists from NCM, WMO, ECMWF, MET Norway, G42, Google, TAHMO, Rhiza Research, AfriClimate AI and others joined the 2025 program.</p>
+    </div>
+    <div class="pgrid" id="speakers2025"></div>
+  </div>
+</section>
+
+<!-- 2025 PARTICIPANTS -->
+<section class="band" id="cohort2025">
+  <div class="wrap reveal">
+    <div class="sec-head" style="margin-bottom:16px"><span class="eyebrow">The 2025 cohort</span><h2>Participants.</h2>
+      <p class="lead">Twenty meteorologists and agricultural specialists from six countries, across the Weather and Agriculture tracks.</p>
+      <div style="display:flex;gap:12px;margin-top:14px"><span class="tracktag tt-weather">Weather track</span><span class="tracktag tt-ag">Agriculture track</span></div>
+    </div>
+    <div id="participants2025"></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <div><span class="brand"><span class="mark"></span>AI for Weather Forecasting</span><p class="foot-note">A capacity-building program under the AIM for Scale Weather Innovation Package — led by MBZUAI with the University of Chicago AI for Climate initiative and partners.</p></div>
-      <div><h4>Program</h4><a href="index.html#about">About</a><a href="research.html">Research</a><a href="agenda.html">Agenda</a><a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a></div>
+      <div><span class="brand"><img class="logo" src="assets/logo.png" alt="AI4AG Weather Forecasting Program"></span><p class="foot-note">A capacity-building program under the AIM for Scale Weather Innovation Package — led by MBZUAI with the University of Chicago AI for Climate initiative and partners.</p></div>
+      <div><h4>Program</h4><a href="index.html#about">About</a><a href="agenda.html">Agenda</a><a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a></div>
       <div><h4>People</h4><a href="team.html">Team &amp; Speakers</a><a href="participants.html">Participants</a><a href="2025.html">2025 Program</a></div>
       <div><h4>Contact</h4><a href="mailto:Souhaib.BenTaieb@mbzuai.ac.ae">Dr. Souhaib Ben Taieb</a><a href="mailto:Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae">Akbobek Abilkaiyrkyzy</a></div>
     </div>
@@ -149,6 +208,76 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const hl=document.getElementById('hl'),pb=document.getElementById('playbtn');
 if(pb&&hl){hl.addEventListener('loadeddata',()=>{pb.style.display='flex';});
   pb.onclick=()=>{pb.style.display='none';hl.play().catch(()=>{});};}
+
+/* ---- 2025 people (from the Edition-1 roster) ---- */
+const PH="assets/people/";
+function initials(n){return n.replace(/^(Dr\.|Prof\.)\s+/,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();}
+function person(p){
+  const photo=p.img?'<img src="'+PH+encodeURIComponent(p.img)+'" alt="'+p.n+'" loading="lazy" onerror="this.style.display=\'none\'">':'';
+  return '<article class="person"><div class="ph"><span class="initials">'+initials(p.n)+'</span>'+photo+'</div><div class="pb"><div class="pn">'+p.n+'</div><div class="po">'+p.o+'</div></div></article>';
+}
+const TEAM=[
+ {h:"Organizers",people:[
+   {n:"Souhaib Ben Taieb",o:"MBZUAI",img:"souhaib.jpg"},{n:"Pedram Hassanzadeh",o:"University of Chicago",img:"pedram.jpeg"},
+   {n:"Amir Jina",o:"University of Chicago",img:"amirjina.png"},{n:"Katherine Kowal",o:"University of Chicago",img:"Katie.jpg"},
+   {n:"Tufa Dinku",o:"Columbia University",img:"tufa_profile.jpg"},{n:"Imara Salas",o:"AIM for Scale",img:"imara.jpeg"}
+ ]},
+ {h:"Program Coordination",people:[
+   {n:"Akbobek Abilkaiyrkyzy",o:"MBZUAI",img:"akbobek.jpeg"},{n:"Mauricio Ortiz-Riomalo",o:"University of Chicago",img:"mauricio.jpeg"}
+ ]},
+ {h:"Technical Development & Support",people:[
+   {n:"Mohamed Aziz Benzarti",o:"MBZUAI",img:"mohamed.jpeg"},{n:"Adam Marchakitus",o:"University of Chicago",img:"adam.jpeg"},
+   {n:"Elnura Zhalieva",o:"MBZUAI",img:"elnura.jpeg"},{n:"Jad Zakharia",o:"MBZUAI",img:"jad.jpeg"}
+ ]}
+];
+const WELCOME=[
+ {n:"Prof. Timothy Baldwin",o:"MBZUAI",img:"tim.jpg"},
+ {n:"Khalfan Al-Matrooshi",o:"UAE Presidential Court",img:"Khalfan AlMatrooshi.jpg"}
+];
+const SPK=[
+ {n:"Dr. Koteswararao Kundeti",o:"NCM UAE",img:"kundeti.jpeg"},{n:"Genevieve Flaspohler",o:"Rhiza Research",img:"gene.JPG"},
+ {n:"Jonathan Mestres",o:"G42",img:"photo_Jonathan.jpg"},{n:"Adah Jepkemoi Kibet",o:"Inception (G42)",img:"Adah_Kibet.jpg"},
+ {n:"George Sserwadda",o:"TAHMO",img:"george.jpeg"},{n:"Dr. Erkin Isaev",o:"WMO",img:"erkin.jpeg"},
+ {n:"Dr. Rendani Mbuvha",o:"AfriClimate AI",img:"rendani.jpeg"},{n:"Olivia Graham",o:"Google",img:"olivia.jpeg"},
+ {n:"Vegard Bønes",o:"MET Norway",img:"Vegard.png"},{n:"Corentin Carton de Wiart",o:"ECMWF",img:"corentin.jpg"},
+ {n:"William Becker",o:"ECMWF",img:"william.jpeg"},{n:"Elinor Kruse",o:"Google DeepMind",img:"elinor.jpeg"},
+ {n:"Rabia Merrouchi",o:"WMO",img:"rabia.jpeg"},{n:"Yuki Honda",o:"WMO",img:"yuki.jpeg"},
+ {n:"Mustafa Adiguzel",o:"WMO",img:""},{n:"Mohamed Abudalla Al Ebri",o:"NCM UAE",img:""}
+];
+const PART=[
+ {c:"Chile",f:"🇨🇱",people:[
+   {n:"Marcel Fuentes",r:"Researcher",o:"INIA",t:"weather"},
+   {n:"Tamara Venegas Yurazeck",r:"Meteorologist",o:"Dirección Meteorológica de Chile",t:"weather"},
+   {n:"José Abel Echeverría Morales",r:"Head, Sustainability & Risk Management",o:"INDAP",t:"ag"}]},
+ {c:"Nigeria",f:"🇳🇬",people:[
+   {n:"Ikenna Camelius Orisakwe",r:"Senior Meteorologist",o:"NiMet",t:"weather"},
+   {n:"Felix Olabamiji Ajibola",r:"Senior Researcher",o:"NiMet",t:"weather"},
+   {n:"Temitope Banjo",r:"Agriculture Extension Officer",o:"Fed. Ministry of Agriculture & Rural Development",t:"ag"}]},
+ {c:"Kenya",f:"🇰🇪",people:[
+   {n:"Ezekiel Muigai",r:"Ag. Deputy Director, Forecasting",o:"Kenya Meteorological Department",t:"weather"},
+   {n:"Japheth Migiro",r:"Meteorologist",o:"Kenya Meteorological Department",t:"weather"},
+   {n:"Janet Ngesa",r:"ICT Professional",o:"KALRO",t:"ag"},
+   {n:"John Juma Katana",r:"Senior Agricultural Officer",o:"Ministry of Agriculture & Livestock Development",t:"ag"}]},
+ {c:"Ethiopia",f:"🇪🇹",people:[
+   {n:"Asaminew Teshome",r:"Dep. Director General, Forecast & Advisory Services",o:"Ethiopian Meteorological Institute",t:"weather"},
+   {n:"Melkamu Diriba",r:"PhD Student",o:"Ethiopian Meteorological Institute",t:"weather"},
+   {n:"Addisu Dabale",r:"Agricultural Engineer",o:"Ministry of Agriculture",t:"ag"},
+   {n:"Patrick Kinyua Gikunda",r:"AI & Impact-Based Forecasting Expert",o:"ACMAD",t:"ag"}]},
+ {c:"Bangladesh",f:"🇧🇩",people:[
+   {n:"A. K. M Nazmul Hoque",r:"Meteorologist",o:"Bangladesh Meteorological Department",t:"weather"},
+   {n:"Boni Amin Khan",r:"Additional Deputy Director",o:"Department of Agricultural Extension",t:"ag"}]},
+ {c:"United Arab Emirates",f:"🇦🇪",people:[
+   {n:"Alyaa Ali Ahmed Alhantoobi",r:"Senior Numerical Forecasting Specialist",o:"NCM UAE",t:"weather"},
+   {n:"Esra Waleed Khamis Alnaqbi",r:"Aviation Meteorology Forecaster",o:"NCM UAE",t:"weather"},
+   {n:"Aya Rashid Mohamed Alrashdi",r:"Forecaster",o:"NCM UAE",t:"weather"},
+   {n:"Alreem Saad Nasser Saeed Almaskari",r:"Forecaster",o:"NCM UAE",t:"weather"},
+   {n:"Sultan Tariq Mohmed Karama Alkatheeri",r:"Forecaster",o:"NCM UAE",t:"weather"}]}
+];
+const $=id=>document.getElementById(id);
+$('team2025').innerHTML=TEAM.map(grp=>'<div class="grp"><div class="gh"><h3>'+grp.h+'</h3></div><div class="pgrid">'+grp.people.map(person).join('')+'</div></div>').join('');
+$('welcome2025').innerHTML=WELCOME.map(person).join('');
+$('speakers2025').innerHTML=SPK.map(person).join('');
+$('participants2025').innerHTML=PART.map(c=>'<div class="ctry">'+c.f+' '+c.c+'</div><div class="pgrid">'+c.people.map(p=>'<article class="pcard"><div style="margin-bottom:8px"><span class="tracktag tt-'+p.t+'">'+(p.t==="weather"?"Weather":"Agriculture")+'</span></div><div class="pn">'+p.n+'</div><div class="pr">'+p.r+'</div><div class="po">'+p.o+'</div></article>').join('')+'</div>').join('');
 </script>
 </body>
 </html>

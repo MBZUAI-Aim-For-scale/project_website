@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI for Weather Forecasting Training Program · MBZUAI · AIM for Scale</title>
+<title>AI4AG Weather Forecasting Program · MBZUAI · AIM for Scale</title>
 <meta name="description" content="A non-profit capacity-building program helping national meteorological services and ministries of agriculture generate AI-driven weather forecasts for farmers. The 2026 program · November 9–13, 2026 · MBZUAI, Abu Dhabi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
 /* homepage-only hero */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
@@ -74,6 +75,8 @@
 .mini2025 .m{border-top:2px solid rgba(255,255,255,.2);padding-top:14px}
 .mini2025 .f{font-family:var(--serif);font-size:2.4rem;font-weight:600;line-height:1}
 .mini2025 .c{color:rgba(255,255,255,.65);font-size:.85rem;margin-top:4px}
+.ccts{display:flex;flex-wrap:wrap;gap:10px}
+.cchip{background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 16px;font-size:.94rem;font-weight:600}
 @media(max-width:760px){.split2025{grid-template-columns:1fr;gap:28px}}
 @media(max-width:900px){.stat-row{grid-template-columns:1fr 1fr}.quotes{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:30px}.linkrow{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.stat-row,.linkrow,.gal{grid-template-columns:1fr}.hero-meta{gap:22px}}
@@ -84,7 +87,7 @@
 <!-- NAV -->
 <nav class="nav attop" id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><span class="mark"></span>AI for Weather Forecasting<br>Training Program</a>
+    <a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="AI4AG Weather Forecasting Program"></a>
     <div class="links">
       <a href="#about">About</a>
       <a href="agenda.html">Agenda</a>
@@ -97,7 +100,7 @@
   </div>
 </nav>
 <div class="sheet" id="sheet">
-  <div class="top"><span class="brand"><span class="mark"></span>AI for Weather Forecasting</span><button class="x" id="closeSheet">&times;</button></div>
+  <div class="top"><span class="brand"><img class="logo" src="assets/logo.png" alt="AI4AG Weather Forecasting Program"></span><button class="x" id="closeSheet">&times;</button></div>
   <a href="#about">About</a><a href="agenda.html">Agenda</a><a href="team.html">Team</a>
   <a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a><a href="2025.html">2025</a>
 </div>
@@ -106,17 +109,17 @@
 <header class="hero">
   <div class="hero-bg"></div>
   <div class="wrap">
-    <span class="pill"><span class="dot"></span>The 2026 Program · Capacity-building</span>
-    <h1>Putting AI-driven weather forecasting in the hands of national services.</h1>
-    <p class="lead">A non-profit training program helping meteorologists and agricultural specialists generate their own AI-based forecasts — tailored to farmers, and built to run in data-limited settings.</p>
+    <span class="pill"><span class="dot"></span>The 2026 Program · Nov 9–13, 2026</span>
+    <h1>Equipping governments to deliver AI-powered forecasts that benefit farmers at scale.</h1>
+    <p class="lead">A hands-on training program bringing together meteorologists and agricultural specialists from national government services to build capacity in AI-powered weather forecasting. Participants learn to generate, evaluate, and deploy regionally tailored AI forecasts, translating cutting-edge technology into practical agricultural advisory services that can reach smallholder farmers at scale.</p>
     <div class="hero-cta">
       <a class="btn btn-accent" href="#about">About the program</a>
       <a class="btn btn-outline" href="agenda.html">View the agenda</a>
     </div>
     <div class="hero-meta">
-      <div><div class="k">Nov 9–13, 2026</div><div class="l">2026 · MBZUAI, Abu Dhabi</div></div>
+      <div><div class="k">Nov 9–13, 2026</div><div class="l">MBZUAI &amp; NCM UAE · Abu Dhabi</div></div>
       <div><div class="k">5 days</div><div class="l">Weather &amp; Agriculture tracks</div></div>
-      <div><div class="k">13 countries</div><div class="l">In the 2026 cohort</div></div>
+      <div><div class="k">15 countries</div><div class="l">In the 2026 cohort</div></div>
     </div>
   </div>
 </header>
@@ -127,23 +130,23 @@
     <div class="logolock">
       <span class="logolabel">Led by MBZUAI · in collaboration with</span>
       <div class="logorow">
-        <img src="https://ai4farmcast.ai/assets/logos/mbzuai.jpg" alt="MBZUAI" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/uchicago.png" alt="University of Chicago — AI for Climate" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/ncmuae.png" alt="UAE National Center of Meteorology" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/aim4scale.png" alt="AIM for Scale" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/uaew.jpg" alt="UAE Presidential Court" loading="lazy">
+        <img src="assets/logos/mbzuai.jpg" alt="MBZUAI" loading="lazy">
+        <img src="assets/logos/uchicago.png" alt="University of Chicago — AI for Climate" loading="lazy">
+        <img src="assets/logos/ncmuae.png" alt="UAE National Center of Meteorology" loading="lazy">
+        <img src="assets/logos/aim4scale.png" alt="AIM for Scale" loading="lazy">
+        <img src="assets/logos/uaew.jpg" alt="UAE Presidential Court" loading="lazy">
       </div>
       <span class="logolabel" style="margin-top:4px">With collaborating institutions</span>
       <div class="logorow sm">
-        <img src="https://ai4farmcast.ai/assets/logos/wmo.png" alt="WMO" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/ecmwf.png" alt="ECMWF" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/rhiza.png" alt="Rhiza Research" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/tahmo.png" alt="TAHMO" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/metnorway.png" alt="MET Norway" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/g42inception.png" alt="G42 · Inception" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/deepmind.png" alt="Google DeepMind" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/google.png" alt="Google" loading="lazy">
-        <img src="https://ai4farmcast.ai/assets/logos/africlimate.png" alt="AfriClimate AI" loading="lazy">
+        <img src="assets/logos/wmo.png" alt="WMO" loading="lazy">
+        <img src="assets/logos/ecmwf.png" alt="ECMWF" loading="lazy">
+        <img src="assets/logos/rhiza.png" alt="Rhiza Research" loading="lazy">
+        <img src="assets/logos/tahmo.png" alt="TAHMO" loading="lazy">
+        <img src="assets/logos/metnorway.png" alt="MET Norway" loading="lazy">
+        <img src="assets/logos/g42inception.png" alt="G42 · Inception" loading="lazy">
+        <img src="assets/logos/deepmind.png" alt="Google DeepMind" loading="lazy">
+        <img src="assets/logos/google.png" alt="Google" loading="lazy">
+        <img src="assets/logos/africlimate.png" alt="AfriClimate AI" loading="lazy">
       </div>
       <!-- Logos referenced from the current site. Host local copies at /assets/logos/ before launch. -->
     </div>
@@ -188,6 +191,24 @@
   </div>
 </section>
 
+<!-- PARTICIPATING COUNTRIES (2026) -->
+<section>
+  <div class="wrap reveal">
+    <div class="sec-head" style="margin-bottom:24px">
+      <span class="eyebrow">The 2026 cohort</span>
+      <h2>15 participating countries.</h2>
+      <p class="lead">Meteorologists and agricultural specialists from national services across Africa, Asia, and Latin America.</p>
+    </div>
+    <div class="ccts">
+      <span class="cchip">🇸🇳 Senegal</span><span class="cchip">🇷🇼 Rwanda</span><span class="cchip">🇨🇴 Colombia</span>
+      <span class="cchip">🇵🇪 Peru</span><span class="cchip">🇧🇴 Bolivia</span><span class="cchip">🇵🇭 Philippines</span>
+      <span class="cchip">🇮🇩 Indonesia</span><span class="cchip">🇵🇰 Pakistan</span><span class="cchip">🇳🇬 Nigeria</span>
+      <span class="cchip">🇪🇹 Ethiopia</span><span class="cchip">🇰🇪 Kenya</span><span class="cchip">🇿🇲 Zambia</span>
+      <span class="cchip">🇱🇦 Lao PDR</span><span class="cchip">🇨🇱 Chile</span><span class="cchip">🇧🇩 Bangladesh</span>
+    </div>
+  </div>
+</section>
+
 <!-- 2025 TEASER (full program lives on 2025.html) -->
 <section class="band-ink">
   <div class="wrap reveal">
@@ -223,13 +244,8 @@
   <div class="wrap reveal split">
     <div>
       <span class="eyebrow">Prepare before you arrive</span>
-      <h2>A foundations curriculum, in the Pre-Training Portal.</h2>
-      <p class="lead">Every participant works through a self-paced series before the workshop.</p>
-      <ul class="checklist">
-        <li>Twelve self-paced video modules with knowledge checks</li>
-        <li>Curated deep-dive resources from ECMWF, MetEd &amp; WMO</li>
-        <li>Progress tracking &amp; certificates for participants, facilitators &amp; organizers</li>
-      </ul>
+      <h2>A comprehensive pre-training curriculum, on our learning platform.</h2>
+      <p class="lead">This year's pre-training is much more in-depth — a multi-week curriculum delivered through the Pre-Training Portal, our Moodle learning platform, combining self-paced modules with live online sessions.</p>
       <div style="margin-top:26px"><a class="btn btn-primary" href="pre-training.html">Go to Pre-Training →</a></div>
     </div>
     <div class="media-card note" data-note="IMAGE SLOT · participants in session, 2025 (4:5)"></div>
@@ -254,7 +270,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <span class="brand"><span class="mark"></span>AI for Weather Forecasting</span>
+        <span class="brand"><img class="logo" src="assets/logo.png" alt="AI4AG Weather Forecasting Program"></span>
         <p class="foot-note">A capacity-building program under the AIM for Scale Weather Innovation Package — led by MBZUAI with the University of Chicago AI for Climate initiative and partners.</p>
       </div>
       <div><h4>Program</h4><a href="#about">About</a><a href="agenda.html">Agenda</a><a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a></div>
