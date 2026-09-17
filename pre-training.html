@@ -157,9 +157,9 @@
       <p class="lead">The 2026 program runs two tracks — Weather and Agriculture. Download the template for your track and the shared CONOPS toolkit before you arrive.</p>
     </div>
     <div class="grid-2">
-      <div class="resource"><span class="tracktag tt-weather">Weather Track</span><h3>Country Weather Services Template</h3><p>Present your national met service's current forecasting workflow, data, and operational products. Follow the structure in the template.</p><div class="dl"><a href="/assets/weather-track-template.pptx">Weather Track Template <span class="meta">· PPTX</span></a></div></div>
-      <div class="resource"><span class="tracktag tt-ag">Agriculture Track</span><h3>Agricultural Advisory Services Template</h3><p>Map your country's agricultural advisory services, end-user needs, and decision calendars for translating forecasts into action.</p><div class="dl"><a href="/assets/agriculture-track-template.pptx">Agriculture Track Template <span class="meta">· PPTX</span></a></div></div>
-      <div class="resource"><span class="ftype">▣ CONOPS toolkit</span><h3>CONOPS Development Template</h3><p>Structured template for your country-specific Concept of Operations — stakeholder mapping, workflow design, and implementation planning.</p><div class="dl"><a href="/assets/conops-guidelines.pdf">Guidelines <span class="meta">· PDF</span></a><a href="/assets/conops-template.pptx">Template <span class="meta">· PPTX</span></a></div></div>
+      <div class="resource"><span class="tracktag tt-weather">Weather Track</span><h3>Country Weather Services Template</h3><p>Present your national met service's current forecasting workflow, data, and operational products. Follow the structure in the template.</p><div class="dl"><a href="assets/weather-track-template.pptx">Weather Track Template <span class="meta">· PPTX</span></a></div></div>
+      <div class="resource"><span class="tracktag tt-ag">Agriculture Track</span><h3>Agricultural Advisory Services Template</h3><p>Map your country's agricultural advisory services, end-user needs, and decision calendars for translating forecasts into action.</p><div class="dl"><a href="assets/agriculture-track-template.pptx">Agriculture Track Template <span class="meta">· PPTX</span></a></div></div>
+      <div class="resource"><span class="ftype">▣ CONOPS toolkit</span><h3>CONOPS Development Template</h3><p>Structured template for your country-specific Concept of Operations — stakeholder mapping, workflow design, and implementation planning.</p><div class="dl"><a href="assets/conops-guidelines.pdf">Guidelines <span class="meta">· PDF</span></a><a href="assets/conops-template.pptx">Template <span class="meta">· PPTX</span></a></div></div>
       <div class="resource"><span class="ftype">⤓ Data</span><h3>Data Submission Requirements</h3><p>Technical specifications for the data files you'll bring to the hands-on sessions.</p><div class="dl"><a href="data.html">Data Specifications <span class="meta">· Web</span></a></div></div>
     </div>
   </div>
@@ -184,8 +184,8 @@
    At launch: set MOODLE_LIVE = true and drop the real login URL
    into MOODLE_URL. Public curriculum overview stays visible either way.
    ============================================================ */
-const MOODLE_LIVE = false;                 // ← set true at launch
-const MOODLE_URL  = "{{MOODLE_URL}}";      // ← Moodle login/SSO URL
+const MOODLE_LIVE = true;                  // ← portal is live
+const MOODLE_URL  = "https://learn.ai4farmcast.ai/";   // ← Moodle login/SSO URL
 
 (function renderPortal(){
   const actions=document.getElementById('portalActions');
@@ -200,21 +200,7 @@ const MOODLE_URL  = "{{MOODLE_URL}}";      // ← Moodle login/SSO URL
   } else {
     actions.innerHTML=
       '<span class="tooltip"><button class="btn btn-lg is-disabled" aria-disabled="true">Sign in to the Pre-Training Portal</button>'+
-        '<span class="tip">The portal isn\'t live yet. Leave your email and we\'ll send your sign-in link the moment access opens.</span></span>'+
-      '<form class="notify" id="notifyForm" novalidate>'+
-        '<input type="email" id="notifyEmail" placeholder="you@institution.org" aria-label="Email for portal launch notification" required>'+
-        '<button class="btn btn-accent" type="submit">Notify me</button>'+
-      '</form>'+
-      '<span class="notify-ok" id="notifyOk">Thanks — we\'ll email your sign-in link at launch.</span>';
-    const form=document.getElementById('notifyForm');
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      const email=document.getElementById('notifyEmail');
-      if(!email.value||!email.validity.valid){email.focus();return;}
-      /* TODO: POST email to waitlist endpoint / CRM */
-      form.style.display='none';
-      document.getElementById('notifyOk').style.display='block';
-    });
+        '<span class="tip">The portal isn\'t live yet — access opens ahead of the program.</span></span>';
   }
 })();
 
