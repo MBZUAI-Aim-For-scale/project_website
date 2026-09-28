@@ -103,7 +103,7 @@
 
 <section style="padding-top:52px">
   <div class="wrap">
-    <div class="provisional reveal in">📌 <strong>Provisional schedule.</strong> Based on the 2026 draft curriculum. Sessions, timings, and speakers are subject to confirmation — several speakers are still to be confirmed (TBC/TBD).</div>
+    <div class="provisional reveal in">📌 <strong>Provisional schedule.</strong> Based on the 2026 draft curriculum. Sessions and timings are subject to confirmation.</div>
     <div id="dayTitle"></div>
     <div class="timeline" id="timeline"></div>
   </div>
@@ -212,9 +212,7 @@ function render(){
     const hidden=(filter!=='all'&&isTrack&&s.k!==filter)?' hide':'';
     const cls=s.t==='break'?'break':(s.t==='social'?'social':(s.k||'joint'));
     const tag=isTrack?'<span class="tk '+s.k+'">'+(s.k==='weather'?'Weather':'Agriculture')+'</span>':(s.k==='joint'?'<span class="tk joint">Joint</span>':'');
-    const de=s.de?'<div class="de">'+s.de+'</div>':'';
-    const sp=s.sp?'<div class="sp">'+s.sp+'</div>':'';
-    return '<div class="slot '+cls+hidden+'"><div class="time">'+s.time+'</div><div>'+(s.t?'':tag)+'<div class="ti">'+s.ti+'</div>'+de+sp+'</div></div>';
+    return '<div class="slot '+cls+hidden+'"><div class="time">'+s.time+'</div><div>'+(s.t?'':tag)+'<div class="ti">'+s.ti+'</div></div></div>';
   }).join('');
 }
 daysEl.querySelectorAll('.day-tab').forEach(b=>b.onclick=()=>{cur=+b.dataset.i;daysEl.querySelectorAll('.day-tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');render();});

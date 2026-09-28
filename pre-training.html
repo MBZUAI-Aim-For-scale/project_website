@@ -25,7 +25,7 @@
 .tooltip{position:relative;display:inline-flex}
 .tooltip .tip{position:absolute;bottom:calc(100% + 10px);left:0;background:var(--ink);color:#fff;font-size:.78rem;font-weight:500;padding:9px 13px;border-radius:6px;width:250px;opacity:0;pointer-events:none;transition:.15s;z-index:5;border:1px solid rgba(255,255,255,.15)}
 .tooltip:hover .tip{opacity:1}
-.portal-visual{aspect-ratio:1/1;border-radius:16px;background:radial-gradient(400px 200px at 70% 20%,rgba(224,162,78,.4),transparent 60%),linear-gradient(160deg,#0f6d6e,#0a3d3e);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.05rem;color:rgba(255,255,255,.85);text-align:center;padding:24px;line-height:1.5}
+.portal-visual{width:100%;aspect-ratio:1/1;border-radius:16px;object-fit:cover;display:block}
 .notify{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
 .notify input{flex:1;min-width:180px;padding:12px 15px;border-radius:6px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-family:var(--sans);font-size:.92rem}
 .notify input::placeholder{color:rgba(255,255,255,.5)}
@@ -108,14 +108,15 @@
         <div class="roles"><span class="role">Participants</span><span class="role">Facilitators</span><span class="role">Organizers</span></div>
         <div class="portal-actions" id="portalActions" style="margin-top:16px"></div>
       </div>
-      <div class="portal-visual">Courses · Quizzes<br>Progress · Certificates</div>
+      <img class="portal-visual" src="assets/pretraining-portal.jpg" alt="Farmland under a dramatic sky with weather-forecast data lines">
+
     </div>
   </div>
 </header>
 
 <div class="subnav">
   <div class="wrap subnav-inner">
-    <a href="#portalCard">Portal</a><a href="#series">Foundations Series</a><a href="#assessment">Knowledge Assessment</a><a href="#templates">Track Templates</a>
+    <a href="#portalCard">Portal</a><a href="#series">Foundations Series</a>
   </div>
 </div>
 
@@ -132,36 +133,6 @@
       <p class="lead">A guided path from why forecasting is hard to running AI models and delivering impact-based forecasts for agriculture. Watch each module, then expand for curated deep-dive resources.</p>
     </div>
     <div class="mod-grid" id="modGrid"></div>
-  </div>
-</section>
-
-<!-- ASSESSMENT -->
-<section class="band" id="assessment">
-  <div class="wrap reveal">
-    <div class="sec-head" style="margin-bottom:28px"><span class="eyebrow">Check your readiness</span><h2>Knowledge Assessment</h2></div>
-    <div class="resource" style="max-width:720px">
-      <span class="ftype">◷ Quiz · 20 min</span>
-      <h3>Pre-Workshop Preparation Quiz</h3>
-      <p>Test your understanding of the foundational concepts from the series. Enrolled participants complete this inside the Portal, where it is scored automatically and counts toward your progress.</p>
-      <div class="dl"><a href="quiz.html">Preview the assessment <span class="meta">· 20 min</span></a></div>
-    </div>
-  </div>
-</section>
-
-<!-- TEMPLATES -->
-<section id="templates">
-  <div class="wrap reveal">
-    <div class="sec-head" style="margin-bottom:30px">
-      <span class="eyebrow">Come prepared</span>
-      <h2>Track Templates &amp; Tools</h2>
-      <p class="lead">The 2026 program runs two tracks — Weather and Agriculture. Download the template for your track and the shared CONOPS toolkit before you arrive.</p>
-    </div>
-    <div class="grid-2">
-      <div class="resource"><span class="tracktag tt-weather">Weather Track</span><h3>Country Weather Services Template</h3><p>Present your national met service's current forecasting workflow, data, and operational products. Follow the structure in the template.</p><div class="dl"><a href="assets/weather-track-template.pptx">Weather Track Template <span class="meta">· PPTX</span></a></div></div>
-      <div class="resource"><span class="tracktag tt-ag">Agriculture Track</span><h3>Agricultural Advisory Services Template</h3><p>Map your country's agricultural advisory services, end-user needs, and decision calendars for translating forecasts into action.</p><div class="dl"><a href="assets/agriculture-track-template.pptx">Agriculture Track Template <span class="meta">· PPTX</span></a></div></div>
-      <div class="resource"><span class="ftype">▣ CONOPS toolkit</span><h3>CONOPS Development Template</h3><p>Structured template for your country-specific Concept of Operations — stakeholder mapping, workflow design, and implementation planning.</p><div class="dl"><a href="assets/conops-guidelines.pdf">Guidelines <span class="meta">· PDF</span></a><a href="assets/conops-template.pptx">Template <span class="meta">· PPTX</span></a></div></div>
-      <div class="resource"><span class="ftype">⤓ Data</span><h3>Data Submission Requirements</h3><p>Technical specifications for the data files you'll bring to the hands-on sessions.</p><div class="dl"><a href="data.html">Data Specifications <span class="meta">· Web</span></a></div></div>
-    </div>
   </div>
 </section>
 

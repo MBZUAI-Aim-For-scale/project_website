@@ -17,6 +17,10 @@
 .grp .gh h2{font-size:clamp(1.5rem,3vw,2.1rem)}
 .grp .gh .gc{color:var(--muted);font-size:.92rem}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.rosgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.ros{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:15px 18px}
+.ros .rn{display:block;font-family:var(--serif);font-weight:600;font-size:1.04rem;line-height:1.25}
+.ros .ro{display:block;color:var(--teal);font-size:.84rem;font-weight:600;margin-top:3px}
 .pgrid.wide{grid-template-columns:repeat(3,1fr)}
 .person .pn a{color:inherit}.person .pn a:hover{color:var(--teal)}
 .person details{padding:0 20px 18px}
@@ -63,6 +67,15 @@
   <div class="wrap" id="teamRoot"></div>
 </section>
 
+<section>
+  <div class="wrap reveal">
+    <div class="grp">
+      <div class="gh"><h2>Speakers &amp; Facilitators</h2><span class="gc">Invited speakers and expert session facilitators</span></div>
+      <div class="rosgrid" id="rosterRoot"></div>
+    </div>
+  </div>
+</section>
+
 <section class="band">
   <div class="wrap reveal">
     <div class="contact">
@@ -95,34 +108,61 @@ const GROUPS=[
    {n:"Dr. Katie Kowal",r:"Weather Forecast Lead",o:"University of Chicago",img:"Katie.jpg",url:"https://datascience.uchicago.edu/people/katie-kowal/",bio:"Weather Forecast Lead for the Human-Centered Forecasts Indian Monsoon Onset project and curriculum lead for the training program. Former NOAA Climate Prediction Center scientist; DPhil in Hydrology, Oxford (Rhodes Scholar)."},
    {n:"Imara Salas",r:"Director, AIM for Scale Secretariat",o:"AIM for Scale",img:"imara.jpeg",url:"https://keough.nd.edu/about/faculty-staff-directory/imara-salas-court/",bio:"Manages the Secretariat of AIM for Scale, a global initiative to scale evidence-based agricultural innovations. Her partnerships have mobilized over $1 billion for agriculture, climate resilience, and digital transformation."}
  ]},
- {h:"Program Coordination",c:"Day-to-day organization",wide:false,people:[
+ {h:"Program Coordination",c:"Day-to-day organization",wide:true,people:[
    {n:"Akbobek Abilkaiyrkyzy",r:"Project Coordinator",o:"MBZUAI",img:"akbobek.jpeg",url:"mailto:Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae"},
-   {n:"Emma Hokoda",r:"Program Coordination",o:"University of Chicago",img:"",url:""},
+   {n:"Emma Hokoda",r:"Program Coordination",o:"University of Chicago",img:"emma.jpg",url:""},
    {n:"Mauricio Ortiz-Riomalo",r:"Coordination",o:"University of Chicago",img:"mauricio.jpeg",url:""}
  ]},
- {h:"Research & Technical Team",c:"Hands-on labs and model development",wide:false,people:[
+ {h:"Research & Technical Team",c:"Hands-on labs and model development",wide:true,people:[
    {n:"Adam Marchakitus",r:"Researcher",o:"University of Chicago",img:"adam.jpeg",url:"https://humancenteredforecasts.climate.uchicago.edu/people/adam-marchakitus/",bio:"Researcher in the Climate Extremes Theory and Data group, focused on interpretability of AI weather and climate models. Led the operational pipeline for the 2025 Indian Monsoon forecast dissemination."},
-   {n:"Aya Laajil",r:"Researcher",o:"MBZUAI",img:"",url:""},
-   {n:"Narayana Reddy Karrevula",r:"Researcher",o:"MBZUAI",img:"",url:""}
+   {n:"Othmane Olaui",r:"Researcher",o:"MBZUAI",img:"",url:""},
+   {n:"Narayana Reddy Karrevula",r:"Researcher",o:"MBZUAI",img:"narayana.jpg",url:""}
  ]},
- {h:"Speakers",c:"Full 2026 lineup to be confirmed",wide:false,people:[
-   {n:"Dr. Tufa Dinku",r:"Climate Services",o:"Columbia University (IRI)",img:"tufa_profile.jpg",url:"https://globalcenters.columbia.edu/content/tufa-dinku",bio:"Senior Research Scientist at the IRI with three decades in climate science. Developed the ENACTS approach, now implemented in over 20 countries to integrate climate knowledge into national decision-making."},
-   {n:"To be announced",r:"2026 speaker lineup",o:"Confirmed soon",img:"",url:""}
- ]}
+];
+const ROSTER=[
+   {n:"Dr. Tufa Dinku",o:"Columbia University (IRI)"},
+   {n:"Nora Ndege",o:""},
+   {n:"Anteneh Girma",o:""},
+   {n:"Edgar Ndahiro",o:""},
+   {n:"John Babadara",o:""},
+   {n:"Habtamu Yesigat",o:""},
+   {n:"Hannah Pruitt",o:""},
+   {n:"Madhav Vaidyanathan",o:""},
+   {n:"Niriksha Shetty",o:""},
+   {n:"William Boos",o:""},
+   {n:"Erkin Isaev",o:""},
+   {n:"Sebastian Grey",o:""},
+   {n:"Yuki Honda",o:""},
+   {n:"Rendani Mbuhva",o:""},
+   {n:"Shruti Nath",o:""},
+   {n:"Docko Sow",o:""},
+   {n:"Koomi Toussaint Amoussouvi",o:""},
+   {n:"Mesfin Diro",o:""},
+   {n:"Chris Stewart",o:""},
+   {n:"Diana Francis",o:""},
+   {n:"Ousmane Ndiaye / Patrick",o:""},
+   {n:"Catherine Nakalembe",o:""},
+   {n:"Renata Jagustovic",o:""},
+   {n:"Ani Ghosh",o:""},
+   {n:"Doug Parker",o:""},
+   {n:"Caroline Wainwright",o:""},
+   {n:"Isaac Mensah",o:""},
+   {n:"Neil Hausmann",o:""}
 ];
 
 function initials(n){return n.replace(/^(Dr\.|Prof\.)\s+/,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();}
 function card(p){
   const photo=p.img?'<img src="'+PH+encodeURIComponent(p.img)+'" alt="'+p.n+'" loading="lazy" onerror="this.style.display=\'none\'">':'';
   const name=p.url?'<a href="'+p.url+'" target="_blank" rel="noopener">'+p.n+'</a>':p.n;
-  const bio=p.bio?'<details><summary></summary><p class="bio">'+p.bio+'</p></details>':'';
   return '<article class="person"><div class="ph"><span class="initials">'+initials(p.n)+'</span>'+photo+'</div>'+
-    '<div class="pb"><div class="pn">'+name+'</div><div class="pr">'+p.r+'</div><div class="po">'+p.o+'</div></div>'+bio+'</article>';
+    '<div class="pb"><div class="pn">'+name+'</div><div class="pr">'+p.r+'</div><div class="po">'+p.o+'</div></div></article>';
 }
 document.getElementById('teamRoot').innerHTML=GROUPS.map(g=>
   '<div class="grp reveal"><div class="gh"><h2>'+g.h+'</h2><span class="gc">'+g.c+'</span></div>'+
   '<div class="pgrid'+(g.wide?' wide':'')+'">'+g.people.map(card).join('')+'</div></div>'
 ).join('');
+function ros(p){return '<div class="ros"><span class="rn">'+p.n+'</span>'+(p.o?'<span class="ro">'+p.o+'</span>':'')+'</div>';}
+document.getElementById('rosterRoot').innerHTML=ROSTER.map(ros).join('');
 
 const sheet=document.getElementById('sheet');
 document.getElementById('burger').onclick=()=>sheet.classList.add('open');

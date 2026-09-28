@@ -17,6 +17,18 @@
 .hero-bg::after{content:"";position:absolute;inset:0;background:
   radial-gradient(900px 500px at 80% 16%,rgba(224,162,78,.26),transparent 60%),
   radial-gradient(720px 620px at 10% 92%,rgba(15,109,110,.5),transparent 60%)}
+.hero-motif{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none}
+.hero-motif .flow{stroke-dasharray:5 16;animation:heroFlow 9s linear infinite}
+.hero-motif .flow.f2{animation-duration:13s}
+.hero-motif .flow.f3{animation-duration:17s}
+@keyframes heroFlow{to{stroke-dashoffset:-210}}
+.hero-motif .node{animation:heroPulse 4.5s ease-in-out infinite}
+.hero-motif .node.n2{animation-delay:1.2s}
+.hero-motif .node.n3{animation-delay:2.4s}
+@keyframes heroPulse{0%,100%{opacity:.3;r:3.5}50%{opacity:.95;r:5.5}}
+.hero-motif .spin{transform-box:view-box;transform-origin:1150px 470px;animation:heroSpin 90s linear infinite}
+@keyframes heroSpin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.hero-motif *{animation:none!important}}
 .hero .wrap{position:relative;z-index:2;padding-top:72px;padding-bottom:60px}
 .hero h1{font-size:clamp(2.5rem,5.6vw,4.6rem);max-width:17ch}
 .hero .lead{color:rgba(255,255,255,.82);font-size:1.2rem;margin:24px 0 32px}
@@ -26,12 +38,13 @@
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 .hero .btn-outline{border-color:rgba(255,255,255,.6);color:#fff}
 .hero .btn-outline:hover{background:#fff;color:var(--ink);border-color:#fff}
-/* homepage nav: fixed, transparent over the dark hero, solid on scroll */
-.nav{position:fixed;top:0;left:0;right:0;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
-.nav.attop{background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
-.nav.attop .brand,.nav.attop .links a{color:#fff}
-.nav.attop .links a:hover{color:var(--amber)}
-.nav.attop .burger{color:#fff}
+/* organizer logo strip — sits on the hero's dark background, seamless into the hero */
+.orgstrip{background:#0c2a2b;padding:30px 0 26px}
+.orgstrip .logolock{gap:16px}
+.orgstrip .logolabel{font-size:.74rem;font-weight:700;background:linear-gradient(90deg,#5DCAA5 0%,#8fd8cf 40%,#E0A24E 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.orgstrip .logorow{flex-wrap:nowrap;gap:14px}
+.orgstrip .logorow img{height:62px;padding:9px 16px;border:0;box-shadow:0 8px 22px -12px rgba(0,0,0,.5)}
+@media(max-width:820px){.orgstrip .logorow{flex-wrap:wrap}.orgstrip .logorow img{height:50px}}
 .hero-meta{display:flex;gap:40px;margin-top:52px;flex-wrap:wrap}
 .hero-meta .k{font-family:var(--serif);font-size:1.9rem;font-weight:600}
 .hero-meta .l{font-size:.82rem;color:rgba(255,255,255,.7);letter-spacing:.03em}
@@ -58,12 +71,25 @@
 .gal .cell{background:var(--sand-2);border-radius:12px;position:relative}
 .gal .cell.tall{grid-row:span 2}.gal .cell.wide{grid-column:span 2}
 .gal .cell::before{content:"◱ Ed.1 photo";position:absolute;top:12px;left:12px;font-size:.7rem;color:rgba(20,24,31,.4);font-weight:600}
-.split{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:stretch}
+.mediawrap{position:relative;border-radius:20px;overflow:hidden;min-height:260px;box-shadow:0 18px 44px rgba(20,24,31,.16)}
 .checklist{list-style:none;margin-top:20px;display:grid;gap:13px}
 .checklist li{display:flex;gap:12px;font-size:1rem}
 .checklist li::before{content:"";flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:rgba(15,109,110,.14);
   background-image:linear-gradient(var(--teal),var(--teal));background-size:10px 2px;background-repeat:no-repeat;background-position:center;margin-top:3px}
 .media-card{aspect-ratio:4/5;border-radius:20px;background:linear-gradient(160deg,#123a3b,#1d2630)}
+.split-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.contactcard{background:linear-gradient(120deg,var(--teal),var(--teal-d));color:#fff;border-radius:22px;padding:52px}
+.contactcard h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-top:6px}
+.contactcard>p{color:rgba(255,255,255,.85);margin:16px 0 8px;max-width:70ch;line-height:1.7}
+.contactcard>p a{color:#fff;font-weight:600;border-bottom:1px solid rgba(255,255,255,.5)}
+.contactrow{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.contactperson{display:flex;flex-direction:column;gap:4px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:22px 24px;transition:background .2s}
+.contactperson:hover{background:rgba(255,255,255,.16)}
+.contactperson .cp-name{font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.contactperson .cp-role{font-size:.85rem;color:rgba(255,255,255,.75)}
+.contactperson .cp-mail{font-size:.9rem;color:#fff;margin-top:6px;border-bottom:1px solid rgba(255,255,255,.4);align-self:flex-start}
+@media(max-width:640px){.contactcard{padding:34px}.contactrow{grid-template-columns:1fr}}
 .linkrow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
 .linkrow-5{grid-template-columns:repeat(5,1fr)}
 .linkcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px;transition:.2s;display:block}
@@ -85,7 +111,7 @@
 <body>
 
 <!-- NAV -->
-<nav class="nav attop" id="nav">
+<nav class="nav" id="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="AI4AG Weather Forecasting Program"></a>
     <div class="links">
@@ -95,6 +121,7 @@
       <a href="pre-training.html">Pre-Training</a>
       <a href="logistics.html">Logistics</a>
       <a href="2025.html">2025</a>
+      <a href="#contact">Contact</a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -103,11 +130,64 @@
   <div class="top"><span class="brand"><img class="logo" src="assets/logo.png" alt="AI4AG Weather Forecasting Program"></span><button class="x" id="closeSheet">&times;</button></div>
   <a href="#about">About</a><a href="agenda.html">Agenda</a><a href="team.html">Team</a>
   <a href="pre-training.html">Pre-Training</a><a href="logistics.html">Logistics</a><a href="2025.html">2025</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ORGANIZER TOP STRIP -->
+<div class="orgstrip">
+  <div class="wrap">
+    <div class="logolock">
+      <span class="logolabel">Led by MBZUAI · in collaboration with</span>
+      <div class="logorow">
+        <img src="assets/logos/mbzuai.jpg" alt="MBZUAI" loading="lazy">
+        <img src="assets/logos/uchicago.png" alt="University of Chicago — AI for Climate" loading="lazy">
+        <img src="assets/logos/ncmuae.png" alt="UAE National Center of Meteorology" loading="lazy">
+        <img src="assets/logos/aim4scale.png" alt="AIM for Scale" loading="lazy">
+        <img src="assets/logos/uaew.jpg" alt="UAE Presidential Court" loading="lazy">
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
 <header class="hero">
   <div class="hero-bg"></div>
+  <svg class="hero-motif" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <pattern id="hgrid" width="120" height="120" patternUnits="userSpaceOnUse">
+        <path d="M120 0 H0 V120" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+      </pattern>
+      <radialGradient id="hglow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#0F6D6E" stop-opacity=".32"/>
+        <stop offset="72%" stop-color="#0F6D6E" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1440" height="900" fill="url(#hgrid)"/>
+    <g transform="translate(1150 470)">
+      <circle r="430" fill="url(#hglow)"/>
+      <circle r="430" fill="none" stroke="#8fd8cf" stroke-opacity=".18"/>
+      <ellipse rx="430" ry="150" fill="none" stroke="#8fd8cf" stroke-opacity=".12"/>
+      <ellipse rx="430" ry="300" fill="none" stroke="#8fd8cf" stroke-opacity=".1"/>
+      <line x1="-430" y1="0" x2="430" y2="0" stroke="#8fd8cf" stroke-opacity=".14"/>
+      <g class="spin" style="transform-origin:1150px 470px">
+        <ellipse rx="150" ry="430" fill="none" stroke="#8fd8cf" stroke-opacity=".1"/>
+        <ellipse rx="300" ry="430" fill="none" stroke="#8fd8cf" stroke-opacity=".08"/>
+        <line x1="0" y1="-430" x2="0" y2="430" stroke="#8fd8cf" stroke-opacity=".12"/>
+      </g>
+    </g>
+    <g fill="none" stroke-linecap="round">
+      <path class="flow" d="M-40 300 C 320 236, 620 420, 980 320 S 1500 258, 1520 360" stroke="#E0A24E" stroke-opacity=".55" stroke-width="2"/>
+      <path class="flow f2" d="M-40 486 C 360 442, 700 566, 1050 500 S 1500 470, 1520 546" stroke="#5DCAA5" stroke-opacity=".5" stroke-width="2"/>
+      <path class="flow f3" d="M-40 664 C 300 642, 660 726, 1010 662 S 1500 640, 1520 706" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.6"/>
+    </g>
+    <g>
+      <circle class="node" cx="300" cy="268" r="4.5" fill="#E0A24E"/>
+      <circle class="node n2" cx="980" cy="320" r="4" fill="#E0A24E"/>
+      <circle class="node n3" cx="700" cy="566" r="4" fill="#5DCAA5"/>
+      <circle class="node n2" cx="1050" cy="500" r="5" fill="#5DCAA5"/>
+      <circle class="node n3" cx="1010" cy="662" r="4" fill="#ffffff"/>
+    </g>
+  </svg>
   <div class="wrap">
     <span class="pill"><span class="dot"></span>The 2026 Program · Nov 9–13, 2026</span>
     <h1>Equipping governments to deliver AI-powered forecasts that benefit farmers at scale.</h1>
@@ -128,27 +208,13 @@
 <div class="partners light">
   <div class="wrap">
     <div class="logolock">
-      <span class="logolabel">Led by MBZUAI · in collaboration with</span>
-      <div class="logorow">
-        <img src="assets/logos/mbzuai.jpg" alt="MBZUAI" loading="lazy">
-        <img src="assets/logos/uchicago.png" alt="University of Chicago — AI for Climate" loading="lazy">
-        <img src="assets/logos/ncmuae.png" alt="UAE National Center of Meteorology" loading="lazy">
-        <img src="assets/logos/aim4scale.png" alt="AIM for Scale" loading="lazy">
-        <img src="assets/logos/uaew.jpg" alt="UAE Presidential Court" loading="lazy">
-      </div>
-      <span class="logolabel" style="margin-top:4px">With collaborating institutions</span>
+      <span class="logolabel">With collaborating institutions</span>
       <div class="logorow sm">
-        <img src="assets/logos/wmo.png" alt="WMO" loading="lazy">
-        <img src="assets/logos/ecmwf.png" alt="ECMWF" loading="lazy">
-        <img src="assets/logos/rhiza.png" alt="Rhiza Research" loading="lazy">
-        <img src="assets/logos/tahmo.png" alt="TAHMO" loading="lazy">
-        <img src="assets/logos/metnorway.png" alt="MET Norway" loading="lazy">
-        <img src="assets/logos/g42inception.png" alt="G42 · Inception" loading="lazy">
-        <img src="assets/logos/deepmind.png" alt="Google DeepMind" loading="lazy">
-        <img src="assets/logos/google.png" alt="Google" loading="lazy">
-        <img src="assets/logos/africlimate.png" alt="AfriClimate AI" loading="lazy">
+        <img src="assets/logos/alliance-cgiar.jpg" alt="Alliance of Bioversity International &amp; CIAT · CGIAR" loading="lazy">
+        <img src="assets/logos/c4impact.png" alt="C4impact Advisory Group" loading="lazy">
+        <img src="assets/logos/pxd.png" alt="Precision Development (PxD)" loading="lazy">
+        <img src="assets/logos/wmo.png" alt="World Meteorological Organization" loading="lazy">
       </div>
-      <!-- Logos referenced from the current site. Host local copies at /assets/logos/ before launch. -->
     </div>
   </div>
 </div>
@@ -248,7 +314,7 @@
       <p class="lead">This year's pre-training is much more in-depth — a multi-week curriculum delivered through the Pre-Training Portal, our Moodle learning platform, combining self-paced modules with live online sessions.</p>
       <div style="margin-top:26px"><a class="btn btn-primary" href="pre-training.html">Go to Pre-Training →</a></div>
     </div>
-    <div class="media-card note" data-note="IMAGE SLOT · participants in session, 2025 (4:5)"></div>
+    <div class="mediawrap"><img class="split-photo" src="assets/pretraining-session.jpg" alt="Program participants working through sessions during the 2025 training in Abu Dhabi" loading="lazy"></div>
   </div>
 </section>
 
@@ -261,6 +327,29 @@
       <a class="linkcard" href="team.html"><h3>Team</h3><p style="color:var(--muted);font-size:.94rem">Organizers, speakers, and partner collaborators.</p><div class="ar">Meet them →</div></a>
       <a class="linkcard" href="logistics.html"><h3>Logistics</h3><p style="color:var(--muted);font-size:.94rem">Venue, travel, weather, and what to pack.</p><div class="ar">Plan →</div></a>
       <a class="linkcard" href="pre-training.html"><h3>Pre-Training</h3><p style="color:var(--muted);font-size:.94rem">The curriculum and the Pre-Training Portal.</p><div class="ar">Prepare →</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="band" id="contact">
+  <div class="wrap reveal">
+    <div class="contactcard">
+      <span class="eyebrow" style="color:var(--amber)">Get in touch</span>
+      <h2>Questions about the program?</h2>
+      <p>For any inquiries regarding the training program or coordination, please contact <a href="mailto:Souhaib.BenTaieb@mbzuai.ac.ae">Dr. Souhaib Ben Taieb</a> (Project Lead, MBZUAI) at Souhaib.BenTaieb@mbzuai.ac.ae and <a href="mailto:Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae">Akbobek Abilkaiyrkyzy</a> (Project Coordinator, MBZUAI) at Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae.</p>
+      <div class="contactrow">
+        <a class="contactperson" href="mailto:Souhaib.BenTaieb@mbzuai.ac.ae">
+          <span class="cp-name">Dr. Souhaib Ben Taieb</span>
+          <span class="cp-role">Project Lead · MBZUAI</span>
+          <span class="cp-mail">Souhaib.BenTaieb@mbzuai.ac.ae</span>
+        </a>
+        <a class="contactperson" href="mailto:Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae">
+          <span class="cp-name">Akbobek Abilkaiyrkyzy</span>
+          <span class="cp-role">Project Coordinator · MBZUAI</span>
+          <span class="cp-mail">Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -288,9 +377,6 @@
 </footer>
 
 <script>
-const nav=document.getElementById('nav');
-const setNav=()=>nav.classList.toggle('attop',window.scrollY<40);
-setNav();window.addEventListener('scroll',setNav,{passive:true});
 const sheet=document.getElementById('sheet');
 document.getElementById('burger').onclick=()=>sheet.classList.add('open');
 document.getElementById('closeSheet').onclick=()=>sheet.classList.remove('open');

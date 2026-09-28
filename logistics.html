@@ -17,7 +17,7 @@
 .ag-card .v{font-family:var(--serif);font-size:1.4rem;font-weight:600;margin-top:6px}
 .ag-card .s{color:var(--muted);font-size:.86rem;margin-top:2px}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.map-card{aspect-ratio:4/3;border-radius:18px;background:linear-gradient(160deg,#123a3b,#1d2630);position:relative}
+.map-card{aspect-ratio:4/3;border-radius:18px;background:linear-gradient(160deg,#123a3b,#1d2630);position:relative;overflow:hidden}
 .info h3{font-size:1.5rem;margin-bottom:10px}
 .info p{color:var(--muted);margin-bottom:12px}
 .mini{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
@@ -86,12 +86,12 @@
   <div class="wrap reveal">
     <div class="sec-head" style="margin-bottom:30px"><span class="eyebrow">Where</span><h2>The venues</h2></div>
     <div class="split">
-      <div class="map-card note" data-note="MAP / PHOTO SLOT · MBZUAI, Masdar City — embed map or campus photo"></div>
+      <div class="map-card">
+        <iframe title="Map — MBZUAI, Masdar City, Abu Dhabi" src="https://www.google.com/maps?q=Mohamed%20bin%20Zayed%20University%20of%20Artificial%20Intelligence%2C%20Masdar%20City%2C%20Abu%20Dhabi&output=embed" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
       <div class="info">
         <h3>MBZUAI — Masdar City</h3>
-        <p>Most sessions, including the hands-on AI labs, are hosted at the Mohamed bin Zayed University of Artificial Intelligence in Masdar City, Abu Dhabi. Registration and the opening take place here on Day 1.</p>
-        <h3 style="margin-top:22px">UAE National Center of Meteorology (NCM)</h3>
-        <p>Days 2 and 4 are hosted at NCM, the UAE's operational weather service and a WMO-affiliated regional training center, including an operational facilities tour. Buses run between the hotel and both venues — pickup times are shared each day and shown in the <a href="agenda.html" style="color:var(--teal);font-weight:600">agenda</a>.</p>
+        <h3 style="margin-top:18px">UAE National Center of Meteorology (NCM)</h3>
         <div class="mini">
           <div><div class="k">Getting there</div><div class="d">~30–40 min from AUH airport</div></div>
           <div><div class="k">Between venues</div><div class="d">Organized group transport</div></div>
@@ -138,7 +138,7 @@
           <li>A light layer or jacket — venues are strongly air-conditioned</li>
           <li>Comfortable shoes for the NCM facility tours</li>
           <li>Modest attire is appreciated at official and cultural venues</li>
-          <li>Sunglasses, sunscreen, and a hat for outdoor moments (e.g. group photo, desert cultural event)</li>
+          <li>Sunglasses, sunscreen, and a hat for outdoor moments (e.g. group photo)</li>
           <li>Light, breathable clothing for warm afternoons</li>
         </ul>
       </div>
@@ -152,8 +152,6 @@
     <div class="sec-head" style="margin-bottom:20px"><span class="eyebrow">Travel &amp; entry</span><h2>Getting to Abu Dhabi</h2></div>
     <div class="faq">
       <details open><summary>Which airport should I fly into?</summary><div class="a">Abu Dhabi International Airport (AUH) is closest, about 30–40 minutes from the venues. Dubai International (DXB) is roughly 90 minutes away by road and is a common alternative.</div></details>
-      <details><summary>Do I need a visa?</summary><div class="a">Entry requirements depend on your nationality — many travelers are eligible for visa-on-arrival or an e-visa, while others need to apply in advance. <strong data-note>[Organizers: confirm the visa process and any invitation letters here.]</strong> If you need an official letter of invitation for your visa application, contact the program coordinators as early as possible.</div></details>
-      <details><summary>Where will I stay?</summary><div class="a"><strong data-note>[Organizers: hotel name, address, and booking details to be added.]</strong> Group transport runs between the hotel and both venues each day; daily pickup times are announced on site and reflected in the agenda.</div></details>
       <details><summary>How do I get around?</summary><div class="a">Organized buses connect the hotel with MBZUAI and NCM on session days. For personal travel, metered taxis and ride-hailing apps (Careem, Uber, and the Abu Dhabi taxi app) are widely available and affordable.</div></details>
       <details><summary>Good to know</summary><div class="a">Currency is the UAE dirham (AED); cards are accepted almost everywhere. The working week is Monday–Friday. Arabic is the official language and English is very widely spoken. The UAE is tolerant and welcoming; modest dress is appreciated at official and religious sites. Tap water is desalinated and safe, though many prefer bottled.</div></details>
       <details><summary>Emergency &amp; contacts</summary><div class="a">Local emergency services: police 999, ambulance 998. For anything program-related, reach the coordinators: <a href="mailto:Akbobek.Abilkaiyrkyzy@mbzuai.ac.ae" style="color:var(--teal);font-weight:600">Akbobek Abilkaiyrkyzy</a> (Project Coordinator, MBZUAI).</div></details>
